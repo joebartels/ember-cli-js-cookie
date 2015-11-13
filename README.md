@@ -1,25 +1,25 @@
 # Ember-cli-js-cookie
 
-This README outlines the details of collaborating on this Ember addon.
+#### Installation
+* `ember install ember-cli-js-cookie`
 
-## Installation
+#### Usage
+```js
+import Ember from 'ember';
+import Cookies from 'ember-cli-js-cookie';
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+const { RSVP } = Ember;
 
-## Running
+export default Ember.Route.extend({
+  
+  beforeModel() {
+    if (!Cookies.get('logged-in')) {
+      return RSVP.reject();
+    }
+  }
+});
+```
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+#### js-cookie library
+https://github.com/js-cookie/js-cookie
 
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
