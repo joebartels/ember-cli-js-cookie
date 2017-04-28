@@ -1,12 +1,15 @@
 /* jshint node: true */
 'use strict';
 
+var path = require('path');
+
 module.exports = {
   name: 'ember-cli-js-cookie',
 
   included: function(app) {
-    this._super.included(app);
+    this._super.included.apply(this, arguments);
 
-    app.import(app.bowerDirectory + '/js-cookie/src/js.cookie.js');
+    var jsCookiePath = path.join(app.bowerDirectory, 'js-cookie');
+    this.app.import(path.join(jsCookiePath, 'src',  'js.cookie.js'));
   }
 };
