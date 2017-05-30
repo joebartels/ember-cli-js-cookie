@@ -1,6 +1,0 @@
-{
-  "name": "ember-cli-js-cookie",
-  "dependencies": {
-    "js-cookie":"^2.0.0"
-  }
-}
