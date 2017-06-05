@@ -17,6 +17,6 @@ module.exports = {
     var momentTree = new Funnel(path.dirname(require.resolve('js-cookie')), {
       files: ['js.cookie.js'],
     });
-    return new MergeTrees([vendorTree, momentTree]);
+    return vendorTree ? new MergeTrees([vendorTree, momentTree]) : momentTree;
   }
 };
